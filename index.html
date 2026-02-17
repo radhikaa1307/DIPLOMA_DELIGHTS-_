@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diploma Delights</title>
+
+<style>
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(to right, #fff8cc, #ffe066);
+text-align: center;
+color: #333;
+}
+
+/* Navigation */
+
+nav {
+position: sticky;
+top: 0;
+background: #b30000;
+padding: 12px;
+z-index: 1000;
+}
+
+nav a {
+color: white;
+margin: 0 15px;
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+/* Header */
+
+header {
+background: #ffcc00;
+padding: 20px;
+border-bottom: 5px solid red;
+}
+
+h1 {
+margin: 0;
+font-size: 48px;
+color: #b30000;
+}
+
+h3 {
+margin: 5px 0 0;
+font-weight: normal;
+}
+
+/* Sections */
+
+.section,
+.payment-section,
+.feedback-section,
+.about-section {
+padding: 50px 20px;
+background: #fff;
+}
+
+/* Card */
+
+.card {
+background: white;
+display: inline-block;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+max-width: 420px;
+transition: 0.4s;
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+.card img {
+width: 100%;
+border-radius: 15px;
+}
+
+.dish-name {
+font-size: 30px;
+margin: 15px 0;
+color: #cc0000;
+}
+
+.price {
+font-size: 26px;
+font-weight: bold;
+color: #009933;
+}
+
+/* Offer */
+
+.offer-section {
+background: white;
+padding: 40px 20px;
+border-top: 5px solid red;
+border-bottom: 5px solid red;
+}
+
+.offer-highlight {
+font-size: 28px;
+font-weight: bold;
+color: #009933;
+animation: pulse 1.5s infinite;
+}
+
+/* QR */
+
+.qr-box img {
+width: 200px;
+margin-top: 20px;
+}
+
+/* Button */
+
+button {
+margin-top: 20px;
+padding: 12px 25px;
+font-size: 18px;
+border: none;
+background-color: #cc0000;
+color: white;
+border-radius: 10px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #990000;
+}
+
+/* Team */
+
+.team-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 15px;
+max-width: 700px;
+margin: auto;
+}
+
+.member {
+background: #fff8cc;
+padding: 15px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+
+footer {
+background: #ffcc00;
+padding: 15px;
+border-top: 5px solid red;
+font-weight: bold;
+}
+
+/* Popup */
+
+.thankyou {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: rgba(0,0,0,0.7);
+justify-content: center;
+align-items: center;
+}
+
+.thankyou-box {
+background: white;
+padding: 40px;
+border-radius: 20px;
+animation: pop 0.5s ease-in-out;
+}
+
+/* Animations */
+
+@keyframes pulse {
+0% {transform: scale(1);}
+50% {transform: scale(1.1);}
+100% {transform: scale(1);}
+}
+
+@keyframes pop {
+from {transform: scale(0);}
+to {transform: scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<a href="#menu">Menu</a>
+<a href="#payment">Payment</a>
+<a href="#feedback">Feedback</a>
+<a href="#about">About Us</a>
+</nav>
+
+<header>
+<h1>Diploma Delights</h1>
+<h3>Presented by Students of Seth Jai Parkash Polytechnic</h3>
+</header>
+
+<!-- MENU -->
+
+<div id="menu" class="section">
+
+<h2>🌮 Our Menu</h2>
+
+<div class="card">
+<img src="bhelpuri.jpeg" alt="BHEL BLAST">
+<div class="dish-name">BHEL BLAST</div>
+<div class="price">Only ₹50</div>
+</div>
+
+</div>
+
+<!-- OFFER -->
+
+<div class="offer-section">
+<h2>🔥 Special Offer 🔥</h2>
+<div style="font-size:50px;">🌮 🌮 🌮</div>
+<div class="offer-highlight">Buy 2 boxes for ₹80!</div>
+</div>
+
+<!-- PAYMENT -->
+
+<div id="payment" class="payment-section">
+
+<h2>💳 Payment Instructions</h2>
+
+<p>1. Scan QR</p>
+<p>2. Complete payment</p>
+<p>3. Show screenshot at counter</p>
+
+<div class="qr-box">
+<img src="payment.jpeg" alt="Payment QR">
+</div>
+
+<button onclick="showThankYou()">I Have Paid</button>
+
+</div>
+
+<!-- FEEDBACK -->
+
+<div id="feedback" class="feedback-section">
+
+<h2>❤️ Give Feedback</h2>
+<p>Scan QR & share your experience!</p>
+
+<div class="qr-box">
+<img src="feedback.png" alt="Feedback QR">
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div id="about" class="about-section">
+
+<h2>👩‍🍳 Meet Our Team</h2>
+
+<div class="team-grid">
+
+<div class="member">
+<b>Radhika</b>
+<p>Head Chef</p>
+</div>
+
+<div class="member">
+<b>Nandan</b>
+<p>Marketing Lead</p>
+</div>
+
+<div class="member">
+<b>Abhigyan</b>
+<p>Billing & Counter Manager</p>
+</div>
+
+<div class="member">
+<b>Puspinder</b>
+<p>Co-Chef</p>
+</div>
+
+</div>
+
+<p style="margin-top:20px;">
+Passionate students bringing tasty innovation to Ed Mela 2026!
+</p>
+
+</div>
+
+<footer>
+Ed Mela 2026 | Crunchy • Spicy • Delicious
+</footer>
+
+<!-- THANK YOU POPUP -->
+
+<div class="thankyou" id="thankyou">
+
+<div class="thankyou-box">
+
+<h2>🎉 Thank You for Your Payment! 🎉</h2>
+<p>Enjoy your Papad Cone Chaat 😋</p>
+<p>Please give feedback ❤️</p>
+
+<button onclick="closeThankYou()">Close</button>
+
+</div>
+</div>
+
+<script>
+
+function showThankYou() {
+document.getElementById("thankyou").style.display = "flex";
+}
+
+function closeThankYou() {
+document.getElementById("thankyou").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
